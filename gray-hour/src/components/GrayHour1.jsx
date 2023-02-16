@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import {Button} from 'react-bootstrap'
 
 const GrayHour1 = () => {
 
@@ -58,11 +59,11 @@ const GrayHour1 = () => {
     return (
     <div>
         {/* we don't want invoke the function by using () we curly braces to represent that a JS function will be passed in */}
-        <button onClick={handleClick}>CLick Me</button>
+        <Button className='btn btn-primary'  onClick={handleClick}>CLick Me</Button>
         <hr />
 
         {/* using parenthesis because we are passing through an argument */}
-        <button onClick={() => handleClick2('Azi')}>Click me for a name </button>
+        <Button className='btn btn-primary' onClick={() => handleClick2('Azi')}>Click me for a name </Button>
 
         <hr />
 
