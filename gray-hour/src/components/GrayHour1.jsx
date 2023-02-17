@@ -11,7 +11,7 @@ const GrayHour1 = () => {
     const [name, setName] = useState('Gray')
     // const [fullName, setFullName] = useState("")
     // const [email, setEmail] = useState("")
-    const [success, setSuccess] = useState("")
+    const [successMessage, setSuccessMessage] = useState("")
 
     // distructuring 
     const [user, setUser] = useState({
@@ -42,12 +42,11 @@ const GrayHour1 = () => {
     const handleSubmit = (e) => {
         // prevent the page from refresher, Why don't we want to do that?
         e.preventDefault()
-        console.log(e)
-        // const newUser = {
-
-        // }
-        setSuccess(user.fullName, user.email)
-        console.log(success)
+        console.log(e.target)
+        
+        setUser("")
+        setSuccessMessage(user.fullName, user.email)
+        console.log(successMessage)
 
     }
 
@@ -70,7 +69,8 @@ const GrayHour1 = () => {
             [e.target.name] : e.target.value
         })
         console.log("New User", user)
-        setUser("")
+        
+        
     }
 
 
@@ -112,7 +112,7 @@ const GrayHour1 = () => {
                 <button>Submit</button>
             </form>
 
-            {success}
+            {successMessage}
 
 
         </div>
