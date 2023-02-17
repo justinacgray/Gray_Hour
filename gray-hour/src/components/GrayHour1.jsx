@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import {Button} from 'react-bootstrap'
 
 const GrayHour1 = () => {
@@ -7,39 +7,48 @@ const GrayHour1 = () => {
     // Anonymous functions are functions without names
     //JS uses callbacks to allow you to do one thing (pick up a click event for example) 
     //then do another thing (fire a handler function). 
-    
-    const [name, setName] = useState('Gray')   
-    const [user, setUSer] = useState({
+
+    const [name, setName] = useState('Gray')
+    // const [fullName, setFullName] = useState("")
+    // const [email, setEmail] = useState("")
+    const [success, setSuccess] = useState("")
+
+    // distructuring 
+    const [user, setUser] = useState({
         fullName: '',
         email: ''
     })
 
-    const handleClick =(e) => {
+    const handleClick = (e) => {
         // e is an object and has many properties that you can tap into
         console.log(e)
         console.log(e.target)
         console.log(e.target.innerText)
     }
 
-    const handleClick2 = (name) => {
-        console.log(`Shalom, ${name}`)
+    const handleClick2 = (e) => {
+        console.log(e)
+        // console.log(`Shalom, ${name}`)
     }
 
     // takes in an event because user is typing and detecting a change in the input
     const handleInputChange = (event) => {
         console.log(event)
         const userValue = event.target.value
-        console.log(userValue);
+        console.log("user value", userValue);
         setName(userValue)
     }
 
-    const handleSubmit =(e) => {
+    const handleSubmit = (e) => {
         // prevent the page from refresher, Why don't we want to do that?
         e.preventDefault()
         console.log(e)
-        const newUser = {
-    
-        }
+        // const newUser = {
+
+        // }
+        setSuccess(user.fullName, user.email)
+        console.log(success)
+
     }
 
 
@@ -49,54 +58,65 @@ const GrayHour1 = () => {
     // and (attribute) value is the value of the input element 
 
     const handleInputChangeInForm = (e) => {
-        console.log(e)
-        console.log(e.target.name)
-        console.log(e.target.value)
-
+        // console.log(e)
+        console.log("target", e.target)
+        console.log("name", e.target.name)
+        console.log("value", e.target.value)
+        // this code below get the state but changes all inputs at the same time
+        // setFullName(e.target.value)
+        // setEmail(e.target.value)
+        setUser({
+            ...user,
+            [e.target.name] : e.target.value
+        })
+        console.log("New User", user)
+        setUser("")
     }
 
 
     return (
-    <div>
-        {/* we don't want invoke the function by using () we curly braces to represent that a JS function will be passed in */}
-        <Button className='btn btn-primary'  onClick={handleClick}>CLick Me</Button>
-        <hr />
+        <div>
+            {/* we don't want invoke the function by using () we curly braces to represent that a JS function will be passed in */}
+            <Button className='btn btn-primary'  onClick={handleClick}>CLick Me</Button>
+            <hr />
 
-        {/* using parenthesis because we are passing through an argument */}
-        <Button className='btn btn-primary' onClick={() => handleClick2('Azi')}>Click me for a name </Button>
+            {/* using parenthesis because we are passing through an argument */}
+            <Button className='btn btn-primary' onClick={(e) => handleClick2(e)}>Click me for a name </Button>
 
-        <hr />
+            <hr />
 
-        <label htmlFor="name">What is your name?</label>
-        <input onChange={handleInputChange} type="text" placeholder={name}/>
+            <label htmlFor="name">What is your name?</label>
+            <input onChange={handleInputChange} type="text" placeholder={name} />
 
-        {name}
+            {name}
 
-        <hr />
+            <hr />
 
-        <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Full Name?</label>
-        <input 
-        onChange={handleInputChangeInForm} 
-        name="fullName" 
-        value={user.fullName} 
-        type="text" 
-        placeholder="Full Name"/>
+            <form onSubmit={handleSubmit}>
+                <label htmlFor="name">Full Name</label>
+                <input
+                    onChange={handleInputChangeInForm}
+                    name="fullName"
+                    value={user.fullName}
+                    type="text"
+                    placeholder="Full Name" />
 
-        <label htmlFor="name">Email?</label>
-        <input 
-        onChange={handleInputChangeInForm} 
-        name="email" 
-        value={user.email} 
-        type="text" 
-        placeholder="Email"/>
-        </form>
+                <label htmlFor="email">Email</label>
+                <input
+                    onChange={handleInputChangeInForm}
+                    name="email"
+                    value={user.email}
+                    type="text"
+                    placeholder="Email" />
+
+                <button>Submit</button>
+            </form>
+
+            {success}
 
 
-
-
-    </div>
-  )
+        </div>
+    )
 }
 
 export default GrayHour1
