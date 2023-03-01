@@ -1,6 +1,7 @@
 import './App.css';
 import GrayHour1 from './components/GrayHour1';
 import GrayHour2 from './components/GrayHour2';
+import GrayHour2P2 from './components/GrayHour2P2';
 
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <div className="container">
       {/* <GrayHour1 /> */}
       <GrayHour2 />
+      {/* <GrayHour2P2 /> */}
     </div>
   );
 }

@@ -1,45 +1,56 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
-const GrayHour2 = () => {
+const GrayHour2P2 = () => {
 
-    const [word, setWord] = useState("pineapple")
-    const [clickWord, setClickWord] = useState("")
-    // const [meaning, setMeaning] = useState("")
+    const [clickWordObj, setClickWordObj] = useState({
+        word: "penguin",
+        meanings: [],
+        definitions: []
+    })
+
+    const [wordObj, setWordObj] = useState({
+        word: "giraffe",
+        meanings: [],
+        definitions: []
+    })
 
 
     const apiEndpoint = 'https://api.dictionaryapi.dev/api/v2/entries/en/'
 
-    // if you want data automatically rendered on the page
     useEffect(() => {
-        axios.get(`${apiEndpoint}${word}`)
+        axios.get(`${apiEndpoint}${wordObj.word}`)
             .then((res) => {
-                console.log("useEffect res JSON obj", res)
                 console.log("useEffect res.data", res.data)
                 console.log("useEffect res.data[0]", res.data[0])
                 console.log("useEffect res.data[0].meanings", res.data[0]?.meanings[0])
-                console.log("useEffect res.data[0].meanings ...", res.data[0]?.meanings[0].definitions[0].definition)
+                console.log("useEffect res.data[0].meanings ...", res.data[0].meanings[0]?.definitions[0].definition)
                 // setWord(res.data) // this will give [object,object] in input placeholder
-                setWord(res.data[0].word)
+                setWordObj({
+                    word: res.data[0]?.word,
+                    meanings: "" ,
+                    definitions: "",
+                })
             })
             .catch((err) => {
-                // console.log("error from useEffect", err);
                 console.log("error from useEffect", err.response.status);
             })
     }, []);
 
-    // if you want your user to do something to get the data
     const submitHandler = (e) => {
         e.preventDefault();
         console.log("clicked")
-        axios.get(`${apiEndpoint}${clickWord}`)
+        axios.get(`${apiEndpoint}${clickWordObj.word}`)
             .then((res) => {
-                console.log("onClick res", res.data[0].meanings[0].definitions[0].definition)
-                setClickWord(res.data[0]?.meanings[0]?.definitions[0]?.definition)
-                // setClickWord("")
+                // console.log("onClick res", res.data[0].meanings[0].definitions[0].definition)
+                setClickWordObj({
+                    word: res.data[0]?.word,
+                    meanings: "" ,
+                    definitions: ""
+                })
             })
             .catch((err) => {
-                console.log("ERROR from onClick", err)
+                console.log("ERROR", err)
             })
 
     }
@@ -56,8 +67,8 @@ const GrayHour2 = () => {
                             className="form-control"
                             placeholder="'desire', 'learn', etc... "
                             name="clickWord"
-                            value={clickWord}
-                            onChange={(e) => setClickWord(e.target.value)} />
+                            value={clickWordObj.word}
+                            onChange={(e) => setClickWordObj(e.target.value)} />
                     </div>
                     <button type="submit" className="btn btn-primary">Submit</button>
                 </form>
@@ -69,8 +80,8 @@ const GrayHour2 = () => {
                             className="form-control"
                             placeholder="'desire', 'learn', etc... "
                             name="word"
-                            value={word}
-                            onChange={(e) => setWord(e.target.value)} />
+                            value={wordObj.word}
+                            onChange={(e) => setWordObj(e.target.value)} />
                     </div>
                 
                 </div>
@@ -79,16 +90,16 @@ const GrayHour2 = () => {
             <div className="container d-inline-flex p-2 w-900">
                 <section className='border border-primary m-4 p-4 col '>
                     Display data by onClick
-                    {/* <p>{JSON.stringify(clickWord)}</p> */}
-                    <p>{clickWord}</p>
+                    <p>{clickWordObj.word}</p>
 
                 </section>
 
                 <hr />
                 <section className='border border-primary m-4 p-4 col'>
                     Display data by axios
-                    {JSON.stringify(word)}
-                    {/* <p>{word}</p> */}
+                    <p>{wordObj.word}</p>
+                    {/* {wordObj.word[0].word} */}
+                    {/* {word[0][2]} */}
 
                 </section>
 
@@ -99,4 +110,4 @@ const GrayHour2 = () => {
     )
 }
 
-export default GrayHour2
+export default GrayHour2P2
