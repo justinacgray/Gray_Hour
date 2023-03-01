@@ -1,9 +1,13 @@
-.App {
-  text-align: center;
-  width: 80%;
+html {
+  /* background-color: rgb(58, 109, 228); */
+
+}
+
+.main-div{
+  background-color: rgb(170, 194, 224);
+  width: 550px;
   margin: 50px auto;
-  border: 3px dashed purple;
-  padding: 30px;
+  border-radius: 5%;
 
 }
 
