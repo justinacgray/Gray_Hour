@@ -13,6 +13,7 @@ const GrayHour3ToDoForm = ({task, setTask, todoList, setTodoList}) => {
       completed: false
     }
     console.log("NEW TODO ==>", newTodoObj)
+    // copy my previous list and add a the new todo  at the end
     setTodoList([...todoList, newTodoObj])
     setTask("")
     

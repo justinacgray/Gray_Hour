@@ -6,8 +6,10 @@ html {
 .main-div{
   background-color: rgb(170, 194, 224);
   width: 550px;
+  height: 550px;
   margin: 50px auto;
   border-radius: 5%;
+  border: 2px dashed navy
 
 }
 
