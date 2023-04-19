@@ -65,6 +65,7 @@ const GrayHour3ToDoListView = ({task, setTask, todoList, setTodoList}) => {
             checked ={oneTodo.completed}
             type="checkbox" 
             onChange={(event) => handleCheck(oneTodo)}/>
+            
             <button className="btn btn-danger" onClick={(e) => deleteTodo(oneTodo.id)}> Delete</button>
           </div>
         ))
