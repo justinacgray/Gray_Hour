@@ -1,15 +1,63 @@
-html {
-  /* background-color: rgb(58, 109, 228); */
-
+* {
+  margin: 0;
+  padding: 0;
+  /* border: 2px dashed black; */
 }
 
 .main-div{
-  background-color: rgb(170, 194, 224);
-  width: 550px;
-  height: 550px;
-  margin: 50px auto;
+  background-color: #0E4749;
+  width: 1050px;
+  height: 650px;
+  margin: 80px auto;
   border-radius: 5%;
-  border: 2px dashed navy
+  border: 2px dashed navy;
+  padding: 70px;
 
 }
 
+.tab-list {
+  /* margin: 50px; */
+  gap:10px
+}
+
+.tab-links {
+  margin:25px 20px;
+
+}
+
+.tab-links, a:link{
+  text-decoration: none;
+  color:rgb(253, 253, 253);
+  
+}
+.tab-links a:visited {
+  text-decoration: none;
+  color:rgb(243, 115, 4);
+}
+.tab-links a:hover{
+  text-decoration: none;
+  color:rgb(0, 24, 47);
+}
+
+
+.display-tab-forms{
+  margin: 40px;
+
+}
+
+.box-array-list {
+  overflow: hidden;
+}
+
+.outer-form-container {
+  display: flex;
+  justify-content: space-between;
+  width:95%;
+  height: 35%;
+  padding: 25px;
+  /* border-radius: 5%; */
+
+  
+  
+
+}
