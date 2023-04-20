@@ -29,7 +29,6 @@ function App() {
     tab3: false
   })
 
-
   const [tabsArray, setTabsArray] = useState([<TabForm1 />, <TabForm2 />, <TabForm3 />])
 
   const changeTab = (idx) => {

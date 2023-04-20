@@ -1,52 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
 * {
   margin: 0;
   padding: 0;
-  /* border: 2px dashed black; */
+  box-sizing: border-box;
+  font-family: "Roboto Slab";
 }
 
 .main-div{
   background-color: #0E4749;
   width: 1050px;
-  height: 650px;
+  /* height: 100vh; */
   margin: 80px auto;
-  border-radius: 5%;
-  border: 2px dashed navy;
+  border-radius: 20px;
+  border: 2px dashed rgb(0, 24, 47);
   padding: 70px;
 
 }
 
 .tab-list {
-  /* margin: 50px; */
-  gap:10px
+  display: flex;
+  justify-content: center;
 }
 
 .tab-links {
   margin:25px 20px;
-
 }
 
 .tab-links, a:link{
   text-decoration: none;
-  color:rgb(253, 253, 253);
+  color: #F2FDFF;
   
 }
 .tab-links a:visited {
   text-decoration: none;
-  color:rgb(243, 115, 4);
+  color: #F2FDFF;
 }
 .tab-links a:hover{
   text-decoration: none;
-  color:rgb(0, 24, 47);
+  color: #F0C808;
+  font-size: 20px;
 }
 
 
 .display-tab-forms{
   margin: 40px;
-
 }
 
 .box-array-list {
   overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  
 }
 
 .outer-form-container {
@@ -55,9 +60,10 @@
   width:95%;
   height: 35%;
   padding: 25px;
-  /* border-radius: 5%; */
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
 
-  
-  
-
+.boxColor {
+  margin: 5px;
 }

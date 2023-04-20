@@ -6,10 +6,10 @@ const TabFormDisplay = ({ colorObj, boxColorArray }) => {
         <div className='box-array-list'>
             {
                 boxColorArray.map((oneColor, index) => (
-                    <div key={index} style={{
+                    <div key={index}  className='boxColor' style={{
                         backgroundColor: oneColor.boxColor,
-                        height:`${oneColor.boxWidth}px`,
-                        width: `${oneColor.boxHeight}px`
+                        height:`${oneColor.boxHeight}px`,
+                        width: `${oneColor.boxWidth}px`
                     }}>
             {/* {`${oneColor.boxWidth}px`}
             {`${oneColor.boxHeight}px`} */}
