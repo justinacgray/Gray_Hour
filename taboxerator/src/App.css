@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Slab";
+}
+
+body {
+    background: #4d5b80;
+}
+
+.main-container {
+    background-color: rgb(125, 134, 156, 0.7);
+    width: 85%;
+    margin: 150px auto;
+    border-radius: 20px;
+    border: 2px dashed rgb(0, 24, 47);
+    padding: 70px;
+    text-align: center;
+}
+
+form {
+    padding: 20px;
+}
+
+form label {
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 1em;
+    color: #fff;
+}
+
+form input {
+    border: none;
+    text-align: left;
+    box-shadow: 3px 2px rgba(121, 83, 210, 0.3);
+    padding: 10px;
+    width: 150px;
+    margin: 10px;
+    /* background: transparent; */
+    /* color: #fff; */
+}
+
+input:focus {
+    background: none;
+    border: none;
+    color: #fff;
+}
+.tab-list {
+    display: flex;
+    justify-content: center;
+}
+
+.tab-links{
+    background: transparent;
+    color: #fff;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 25px 20px;
+    padding: 10px 30px;
+    border: 2px solid #fff;
+}
+
+form button {
+    background: transparent;
+    color: #fff;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 20px 0;
+    padding: 10px 30px;
+    border: 2px solid #fff;
+}
+
+button:hover {
+    background: transparent;
+    border: 2px solid rgba(69, 39, 160, 0.4);
+}
+
+
+.display-tab-forms{
+    margin: 40px;
+}
+
+.box-array-list {
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.outer-form-container {
+    display: flex;
+    justify-content: space-between;
+    width:95%;
+    height: 35%;
+    padding: 25px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+.boxColor {
+    margin: 5px;
+  }
