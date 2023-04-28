@@ -1,7 +1,7 @@
 import React from 'react'
 
 const TaskList = ({ task, setTask, todoList, setTodoList }) => {
-    console.log("TASK from DISPLAY -->", task)
+
     console.log("LIST", todoList)
 
     // DELETE FUNCTION
@@ -13,8 +13,7 @@ const TaskList = ({ task, setTask, todoList, setTodoList }) => {
         console.log("FILTERED LIST --->", filteredList)
         setTodoList(filteredList)
     }
-
-
+    // STRIKETHROUGH
     const handleCheck = (todoObj) => {
         console.log("todoObj ------>", todoObj)
         todoObj.completed = !todoObj.completed;
@@ -32,13 +31,13 @@ const TaskList = ({ task, setTask, todoList, setTodoList }) => {
                             <input
                                 checked={oneTodo.completed}
                                 type="checkbox"
-                                onChange={(event) => handleCheck(oneTodo)} />
+                                onChange={(event) => handleCheck(oneTodo)} 
+                                />
                             <button onClick={(e) => deleteTodo(oneTodo.id)}> Delete</button>
                         </li>
                     </div>
                 ))
             }
-
         </ul>
     )
 }
